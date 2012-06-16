@@ -30,7 +30,7 @@ def sparky(args) {
 
 if (System.in.available()) {
     System.in.withReader {
-        args = it.readLine().split(/[' ',]/)
+        args = it.getText().split(/[' ',\n]/)
     }
 }
 

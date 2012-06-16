@@ -36,6 +36,25 @@ Just run `sparky` and pass it a list of numbers (comma-delimited, spaces, whatev
     ▄▆▂█▁
 
 
+## cooler usage
+
+There's a lot of stuff you can do.
+
+Number of commits to the github/groovy-core Git repository, by author:
+
+    $ git shortlog -s |
+    > awk '{print $1}' |
+    > sparky
+    ▁▁▁▁▁▁▁▁▁▁▁▃▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▄▁▁▁▁▁▁▁▅▁▁▁▁▁▁▁▁▁▁▁▁█▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+
+Code visualization. The number of characters of `sparky` itself, by line, ignoring empty lines:
+
+    $ awk '{ print length($0) }' sparky |
+    > grep -v 0 |
+    > sparky
+    ▂▂▁▁▃▁▃▂▃▃▃▂▁▁▂▄▁▄▅▅█▅▂▁▁▃▃▅▁▁▃▂▁▁▇▃▁
+
+
 [spark]: https://github.com/holman/spark
 [Groovy script]: https://github.com/arturoherrero/sparky/blob/master/sparky
 [Groovy binary distribution]: http://groovy.codehaus.org/Download

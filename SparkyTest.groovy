@@ -29,7 +29,7 @@ class SparkyTest extends GroovyShellTestCase {
         assert '▁▂█▅▂' == out.toString().trim()
     }
 
-    void "test it charts pipe data"() {
+    void "test it charts pipe comma data"() {
         System.setIn new ByteArrayInputStream('0,30,55,80,33,150'.getBytes("UTF-8"))
         binding args: []
         assert '▁▂▃▄▂█' == out.toString().trim()
@@ -37,6 +37,12 @@ class SparkyTest extends GroovyShellTestCase {
 
     void "test it charts pipe spaced data"() {
         System.setIn new ByteArrayInputStream('0 30 55 80 33 150'.getBytes("UTF-8"))
+        binding args: []
+        assert '▁▂▃▄▂█' == out.toString().trim()
+    }
+
+    void "test it charts pipe newline data"() {
+        System.setIn new ByteArrayInputStream('0\n30\n55\n80\n33\n150'.getBytes("UTF-8"))
         binding args: []
         assert '▁▂▃▄▂█' == out.toString().trim()
     }
