@@ -1,0 +1,43 @@
+#!/usr/bin/env groovy
+
+def help() {
+    """
+  USAGE:
+    sparky [help] VALUE, ...
+
+  EXAMPLES:
+    sparky 1 5 22 13 53
+    ▁▁▃▂█
+    sparky 0,30,55,80,33,150
+    ▁▂▃▄▂█
+    echo 9 13 5 17 1 | sparky
+    ▄▆▂█▁
+    """
+}
+
+def sparky(args) {
+    ticks = "▁▂▃▄▅▆▇█"
+
+    try {
+        argsNum = args*.toDouble()
+        (min, max) = [argsNum.min(), argsNum.max()]
+        scale = (max - min) / (ticks.size() - 1)
+        argsNum.collect { ticks[((it - min) / scale).toInteger()] }.join()
+    } catch (NumberFormatException exception) {
+        help()
+    }
+}
+
+if (System.in.available()) {
+    System.in.withReader {
+        args = it.readLine().split(/[' ',]/)
+    }
+}
+
+if (args.size() == 0) {
+    println help()
+}
+else {
+    if (args.first().contains(',')) args = args.first().split(',')
+    println sparky(args)
+}
