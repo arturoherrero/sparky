@@ -50,7 +50,7 @@ Number of commits to the github/groovy-core Git repository, by author:
 Code visualization. The number of characters of `sparky` itself, by line, ignoring empty lines:
 
     $ awk '{ print length($0) }' sparky |
-    > grep -v 0 |
+    > grep -v ^0$ |
     > sparky
     ▂▂▁▁▃▁▃▂▃▃▃▂▁▁▂▄▁▄▅▅█▅▂▁▁▃▃▅▁▁▃▂▁▁▇▃▁
 
