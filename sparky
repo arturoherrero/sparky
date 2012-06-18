@@ -28,8 +28,9 @@ def sparky(args) {
     }
 }
 
-if (System.in.available()) {
-    System.in.withReader {
+def reader = new BufferedReader(new InputStreamReader(System.in))
+if (args.size() == 0 && reader.ready()) {
+    reader.withReader {
         args = it.getText().split(/[' ',\n]/)
     }
 }
