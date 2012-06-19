@@ -19,8 +19,8 @@ class SparkyTest extends GroovyShellTestCase {
         }
     }
 
-    void "test it shows help with no argv"() {
-        binding args: []
+    void "test it shows help with help argv"() {
+        binding args: ['help']
         assert out.toString().trim().contains('USAGE')
     }
 
