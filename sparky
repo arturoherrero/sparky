@@ -40,5 +40,6 @@ if (args.size() == 0) {
 }
 else {
     if (args.first().contains(',')) args = args.first().split(',')
+    System.setOut new PrintStream(System.out, true, 'UTF8')
     println sparky(args)
 }
