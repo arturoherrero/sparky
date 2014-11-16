@@ -2,27 +2,25 @@
 
 ### ▁▂▃▅▂▇ in your shell. Groovy flavoured!
 
-Generates sparklines for a set of data.
+Generates sparklines for a set of data. An alternative implementation of **[spark]** powered by Groovy.
 
-An alternative implementation for **[spark]** powered by Groovy.
-
-sparky takes a comma-separated list of data and then prints a sparkline out of it.
+**sparky** takes a comma-separated list of data and then prints a sparkline out of it.
 
 Examples:
 
-    sparky 1 5 22 13 53
+    $ sparky 1 5 22 13 53
     ===> ▁▁▃▂▇
 
-    sparky 0,30,55,80,33,150
+    $ sparky 0,30,55,80,33,150
     ===> ▁▂▃▅▂▇
 
-    sparky help
+    $ sparky help
     ===> Prints the sparky help text
 
 
 ## install
 
-sparky is a [Groovy script]. We can write unix scripts with Groovy and execute them directly on the command line as if they were normal unix shell scripts. Providing you have installed the [Groovy binary distribution] and `groovy` is on your `$PATH`. Then to run the script from the command line, drop it somewhere and make sure it's added to your `$PATH`.
+**sparky** is a [Groovy script]. We can write Unix scripts with Groovy and execute them directly on the command line as if they were normal Unix shell scripts. You need to install the [Groovy binary distribution] and `groovy` is on your `$PATH`. Then to run the script from the command line, drop it somewhere and make sure it's added to your `$PATH`.
 
 
 ## usage
@@ -40,7 +38,7 @@ Just run `sparky` and pass it a list of numbers (comma-delimited, spaces, whatev
 
 There's a lot of stuff you can do.
 
-Number of commits to the github/groovy-core Git repository, by author:
+Number of commits to the [groovy-core] Git repository, by author:
 
     $ git shortlog -s |
     > awk '{print $1}' |
@@ -57,4 +55,5 @@ Code visualization. The number of characters of `sparky` itself, by line, ignori
 
 [spark]: https://github.com/holman/spark
 [Groovy script]: https://github.com/arturoherrero/sparky/blob/master/sparky
-[Groovy binary distribution]: http://groovy.codehaus.org/Download
+[Groovy binary distribution]: http://groovy-lang.org/download.html
+[groovy-core]: https://github.com/groovy/groovy-core
